@@ -72,26 +72,64 @@ def draw():
 #_______________________________________________________________________ Start of Level 2        
     #Level2lines
     if level2 == True:
-        line(300, 200, 400, 200)
-        line(350, 700, 550,  700)
-        line(700, 200, 900, 200)
-        line(0, 500, 100, 500)
-        line(10, 300, 210, 300)
-        line(900, 300, 1000, 300)
-        line(500, 500, 700, 500)
-        line(600, 400, 660, 400)
-        line(300, 500, 450, 500)
-        line(0, 800, 200, 800)
-        line(700, 100, 800, 100)
-        line(800, 800, 1000, 800)
-        line(600, 600, 800, 600)
-        line(800, 400, 900, 400)
-        line(500, 900, 800, 900)
-        line(200, 700, 500, 700)
-        line(0, 100, 100, 100)
-        line(600, 100, 800, 100)
+        line(300, 200, 400, 200)#!
+        line(350, 700, 550,  700)#!
+        line(700, 200, 900, 200)#!
+        line(0, 500, 100, 500)#!
+        line(10, 300, 210, 300)#!
+        line(900, 300, 1000, 300)#!
+        line(500, 500, 700, 500)#!
+        line(600, 400, 660, 400)#!
+        line(300, 500, 450, 500)#!
+        line(0, 800, 200, 800)#!
+        line(700, 100, 800, 100)#!
+        line(800, 800, 1000, 800)#!
+        line(600, 600, 800, 600)#!
+        line(800, 400, 900, 400)#!
+        line(500, 900, 800, 900)#!
+        line(200, 700, 500, 700)#!
+        line(0, 100, 100, 100)#!
+        line(600, 100, 800, 100)#!
         
     if speed_y>=1010 and level1 == False:
         level2 = False
         speed_y = -5
         speed = 10
+        
+    if speed_y >= 200 and speed_y <= 205 and mouseX >= 300 and mouseX <= 200 and level2 == True:
+        background_v = False
+    if speed_y >= 700 and speed_y <= 705 and mouseX >= 350 and mouseX <= 550 and level2 == True:
+        background_v = False
+    if speed_y >= 200 and speed_y <= 205 and mouseX >= 700 and mouseX <= 900 and level2 == True:
+        background_v = False
+    if speed_y >= 500 and speed_y <= 505 and mouseX >=0 and mouseX <= 100 and level2 == True:
+        background_v = False
+    if speed_y >= 300 and speed_y <= 305 and mouseX >= 10 and mouseX <= 210 and level2 == True:
+        background_v = False
+    if speed_y >= 300 and speed_y <= 305 and mouseX >= 900 and mouseX <= 1000 and level2 == True:
+        background_v = False
+    if speed_y >= 500 and speed_y <= 505 and mouseX >= 500 and mouseX <= 700 and level2 == True:
+        background_v = False
+    if speed_y >= 400 and speed_y <= 405 and mouseX >= 600 and mouseX <= 660 and level2 == True:
+        background_v = False
+    if speed_y >= 500 and speed_y <=505 and mouseX >= 300 and mouseX <= 450 and level2 == True:
+        background_v = False
+    if speed_y >= 800 and speed_y <= 805 and mouseX >= 0 and mouseX <= 200 and level2 == True:
+        background_v = False
+    if speed_y >= 800 and speed_y <= 805 and mouseX >= 800 and mouseX <= 1000 and level2 == True:
+        background_v = False
+    if speed_y >= 100 and speed_y <= 105 and mouseX >= 700 and mouseX <= 800 and level2 == True:
+        background_v = False
+    if speed_y >= 600 and speed_y <= 605 and mouseX >= 600 and mouseX <= 800 and level2 == True:
+        background_v = False
+    if speed_y >= 400 and speed_y <= 405 and mouseX >= 800 and mouseX <= 900 and level2 == True:
+        background_v = False
+    if speed_y >= 900 and speed_y <= 905 and mouseX >= 500 and mouseX <= 800 and level2 == True:
+        background_v = False
+    if speed_y >= 700 and speed_y <= 705 and mouseX >= 200 and mouseX <= 500 and level2 == True:
+        background_v = False
+    if speed_y >= 100 and speed_y <= 105 and mouseX >= 0 and mouseX <= 100 and level2 == True:
+        background_v = False
+    if speed_y >= 100 and speed_y <= 105 and mouseX >= 600 and mouseX <= 800 and level2 == True:
+        background_v = False     
+        
