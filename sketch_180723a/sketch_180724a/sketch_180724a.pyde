@@ -96,6 +96,8 @@ def draw():
         speed_y = -5
         speed = 10
         
+    if speed_y>= 200 and speed_y <=205 and mouseX >=300 and mouseX <= 400 and level2== True:
+        background_v = False
     if speed_y >= 200 and speed_y <= 205 and mouseX >= 300 and mouseX <= 200 and level2 == True:
         background_v = False
     if speed_y >= 700 and speed_y <= 705 and mouseX >= 350 and mouseX <= 550 and level2 == True:
