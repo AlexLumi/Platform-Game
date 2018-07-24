@@ -1,6 +1,11 @@
 def setup():
     global speed_x, speed_y,letter,speed,background_v,level1,level2
     size(1000,1000)
+    global imageList, imageIndex
+    imageIndex = 0
+    imageList = [loadImage("Sonic1.png"),loadImage("Sonic2.png"),loadImage("Sonic1.png"),loadImage("Sonic5.png")]
+
+
     background_v = True
     speed_x = 0
     speed_y = 10
@@ -13,12 +18,18 @@ def setup():
 
 def draw():
     global speed_x,speed_y, letter,speed,background_v,level1,level2
-    fill(0,255,230)
+    global imageList, imageIndex
+    
 #______________________________________________________________ Under Here is the Game Over Screen
     if background_v:
         background(255)
         fill(0,255,230)
-        ellipse_x = ellipse(mouseX,speed_y,50, 50)
+        #ellipse_x = ellipse(mouseX,speed_y,50, 50)
+        image(imageList[imageIndex],mouseX-15,speed_y-20,35,50)
+        if frameCount%50 == 0:
+            imageIndex= imageIndex + 1
+            imageIndex = imageIndex%len(imageList)
+            fill(0,255,230)
     else:
         background(0)
         fill(random(255),random(255),random(255))
