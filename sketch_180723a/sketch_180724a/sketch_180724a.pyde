@@ -4,8 +4,15 @@ def setup():
     global imageList, imageIndex
     imageIndex = 0
     imageList = [loadImage("Sonic1.png"),loadImage("Sonic2.png"),loadImage("Sonic1.png"),loadImage("Sonic5.png")]
+<<<<<<< HEAD
     
     randomPoints = RandomXYPoints(30)
+=======
+    loading_time = 0
+    aLoading = 0
+    timer_text = 0
+    background(50,50,50)
+>>>>>>> 1064dfb70a00c440058ac93cde7a0f31c22a5094
 
     background_v = True
     speed_x = 0
@@ -28,11 +35,17 @@ def draw():
         background(255)
         fill(0,255,230)
         #ellipse_x = ellipse(mouseX,speed_y,50, 50)
-        image(imageList[imageIndex],mouseX-15,speed_y-20,35,50)
-        if frameCount%50 == 0:
-            imageIndex= imageIndex + 1
-            imageIndex = imageIndex%len(imageList)
-            fill(0,255,230)
+        #image(imageList[imageIndex],mouseX-15,speed_y-20,35,50)
+        #if frameCount%50 == 0:
+            #imageIndex= imageIndex + 1
+            #imageIndex = imageIndex%len(imageList)
+            #fill(0,255,230)
+        if mouseX <= 449:
+            image(imageList[3],mouseX-15,speed_y-20,35,50)
+        if mouseX >= 450 and mouseX <=550 :
+            image(imageList[0],mouseX-15,speed_y-20,35,50)
+        if mouseX >= 551:
+            image(imageList[1],mouseX-15,speed_y-20,35,50)
     else:
         background(0)
         fill(random(255),random(255),random(255))
@@ -110,6 +123,7 @@ def draw():
 #         speed_y = -5
 #         speed = 10
         
+<<<<<<< HEAD
 #     if speed_y>= 200 and speed_y <=205 and mouseX >=300 and mouseX <= 400 and level2== True:
 #         background_v = False
 #     if speed_y >= 200 and speed_y <= 205 and mouseX >= 300 and mouseX <= 200 and level2 == True:
@@ -168,3 +182,45 @@ def RandomXYPoints(number):
 
     
         
+=======
+    if speed_y>= 200 and speed_y <=205 and mouseX >=300 and mouseX <= 400 and level2== True:
+        background_v = False
+    if speed_y >= 200 and speed_y <= 205 and mouseX >= 300 and mouseX <= 200 and level2 == True:
+        background_v = False
+    if speed_y >= 700 and speed_y <= 705 and mouseX >= 350 and mouseX <= 550 and level2 == True:
+        background_v = False
+    if speed_y >= 200 and speed_y <= 205 and mouseX >= 700 and mouseX <= 900 and level2 == True:
+        background_v = False
+    if speed_y >= 500 and speed_y <= 505 and mouseX >=0 and mouseX <= 100 and level2 == True:
+        background_v = False
+    if speed_y >= 300 and speed_y <= 305 and mouseX >= 10 and mouseX <= 210 and level2 == True:
+        background_v = False
+    if speed_y >= 300 and speed_y <= 305 and mouseX >= 900 and mouseX <= 1000 and level2 == True:
+        background_v = False
+    if speed_y >= 500 and speed_y <= 505 and mouseX >= 500 and mouseX <= 700 and level2 == True:
+        background_v = False
+    if speed_y >= 400 and speed_y <= 405 and mouseX >= 600 and mouseX <= 660 and level2 == True:
+        background_v = False
+    if speed_y >= 500 and speed_y <=505 and mouseX >= 300 and mouseX <= 450 and level2 == True:
+        background_v = False
+    if speed_y >= 800 and speed_y <= 805 and mouseX >= 0 and mouseX <= 200 and level2 == True:
+        background_v = False
+    if speed_y >= 800 and speed_y <= 805 and mouseX >= 800 and mouseX <= 1000 and level2 == True:
+        background_v = False
+    if speed_y >= 100 and speed_y <= 105 and mouseX >= 700 and mouseX <= 800 and level2 == True:
+        background_v = False
+    if speed_y >= 600 and speed_y <= 605 and mouseX >= 600 and mouseX <= 800 and level2 == True:
+        background_v = False
+    if speed_y >= 400 and speed_y <= 405 and mouseX >= 800 and mouseX <= 900 and level2 == True:
+        background_v = False
+    if speed_y >= 900 and speed_y <= 905 and mouseX >= 500 and mouseX <= 800 and level2 == True:
+        background_v = False
+    if speed_y >= 700 and speed_y <= 705 and mouseX >= 200 and mouseX <= 500 and level2 == True:
+        background_v = False
+    if speed_y >= 100 and speed_y <= 105 and mouseX >= 0 and mouseX <= 100 and level2 == True:
+        background_v = False
+    if speed_y >= 100 and speed_y <= 105 and mouseX >= 600 and mouseX <= 800 and level2 == True:
+        background_v = False     
+    
+    print speed
+>>>>>>> 1064dfb70a00c440058ac93cde7a0f31c22a5094
