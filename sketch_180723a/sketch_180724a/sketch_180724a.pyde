@@ -6,7 +6,7 @@ def setup():
     imageList = [loadImage("Sonic1.png"),loadImage("Sonic2.png"),loadImage("Sonic1.png"),loadImage("Sonic5.png")]
 
     
-    randomPoints = RandomXYPoints(30)
+    randomPoints = RandomXYPoints(25)
 
     loading_time = 0
     aLoading = 0
@@ -157,11 +157,14 @@ def draw():
         background_v = False
     
     if level3:
-        for point in randomPoints:
-            line(point[0], point[1], point[0] + 100, point[1])
-            if speed_y >=point[1] and speed_y<=point[1] + 5 and mouseX >= point[0] and mouseX <= point[0] + 100 and level3 == True:
+        for p in randomPoints:
+            #print p
+            line(p[0], p[1], p[0] + 100, p[1])
+            if speed_y - speed <= p[1] and speed_y >= p[1] and mouseX >= p[0] and mouseX <= p[0] + 100:
                 background_v = False
-
+                level3 = False
+                print 'hit'
+        #print randomPoints
 
 def RandomXYPoints(number):
     pointlist = [] 
