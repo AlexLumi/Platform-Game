@@ -1,9 +1,12 @@
 def setup():
-    global speed_x, speed_y,letter,speed,background_v,level1,level2, strx, stry, randomPoints
+    global speed_x, speed_y,letter,speed,background_v,level1,level2, strx, stry, randomPoints,winner
     size(1000,1000)
     global imageList, imageIndex, level3
     imageIndex = 0
     imageList = [loadImage("Sonic1.png"),loadImage("Sonic2.png"),loadImage("Sonic1.png"),loadImage("Sonic5.png")]
+    photo = loadImage("bgrnd1.png")
+    photo1 = loadImage("bgrnd2.png")
+    photo2 = loadImage("bgrnd3.png")
 
     
     randomPoints = RandomXYPoints(25)
@@ -26,13 +29,15 @@ def setup():
 #______________________________________________________________________________________________________________________
     level3 = False
 #______________________________________________________________________________________________________________________
+    winner = False
+#_______________________________________________________________________________________________________________________
 
 def draw():
     global speed_x,speed_y, letter,speed,background_v,level1,level2, strx, stry, randomPoints
-    global imageList, imageIndex, level3
+    global imageList, imageIndex, level3, winner
     
 #______________________________________________________________ Under Here is the Game Over Screen
-    if background_v:
+    if background_v :
         background(255)
         fill(0,255,230)
         if mouseX <= 449:
@@ -47,9 +52,12 @@ def draw():
         textSize(32)
         text("GAME OVER", 400,500)
     fill(255)
-    if mouseX>=1000:
-       speed = -3
-    elif mouseX<=0:
+    
+
+        
+    #if mouseX>=1000:
+    #   speed = -3
+    if mouseX<=0:
        speed = 3
     speed_y=speed_y+speed
 #_____________________________________________________________________________ Level 1
@@ -63,6 +71,7 @@ def draw():
         line(600, 700, 700, 700)#!
         line(800, 800, 900, 800)#!
         line(900, 900, 1000, 900)#!
+
     
     if speed_y >= 400 and speed_y<=405 and mouseX >= 0 and mouseX <=100 and level1 == True: 
         background_v = False
@@ -83,7 +92,7 @@ def draw():
     if speed_y >= 800 and speed_y <= 805 and mouseX >= 800 and mouseX <= 900 and level1 == True:
          background_v = False
         
-    if speed_y>=1010 and level1 == True:
+    if speed_y>1010 and level1 == True and mouseX>=0:
         speed_y = -5
         level1 =False
         level2 = True
@@ -110,9 +119,9 @@ def draw():
         line(0, 100, 100, 100)#!
         line(600, 100, 800, 100)#!
         
-    if speed_y>=1010 and level1 == False:
+    if speed_y>1020 and level1 == False:
         level2 = False
-        level3 = True
+        #level3 = True
         speed_y = -5
         speed = 10
         
@@ -155,16 +164,25 @@ def draw():
         background_v = False
     if speed_y >= 100 and speed_y <= 105 and mouseX >= 600 and mouseX <= 800 and level2 == True:
         background_v = False
-    
-    if level3:
+        
+    if level2 == False and level1 == False:
+        level3 = True
+    if level3 and level2 == False:
         for p in randomPoints:
-            #print p
             line(p[0], p[1], p[0] + 100, p[1])
             if speed_y - speed <= p[1] and speed_y >= p[1] and mouseX >= p[0] and mouseX <= p[0] + 100:
                 background_v = False
+            if speed_y >=1000 and level3 == True and background_v == True:
                 level3 = False
-                print 'hit'
-        #print randomPoints
+                winner = True
+    print winner
+    if winner == True:
+        background(170, 125, 10)
+        fill(random(255),random(255),random(255))
+        textSize(32)
+        text("WINNER", 400,500)
+        
+    
 
 def RandomXYPoints(number):
     pointlist = [] 
@@ -174,6 +192,3 @@ def RandomXYPoints(number):
         stry = random(100,900)
         pointlist.append([strx, stry])
     return pointlist
-
-
-    
