@@ -4,9 +4,8 @@ def setup():
     global imageList, imageIndex, level3
     imageIndex = 0
     imageList = [loadImage("Sonic1.png"),loadImage("Sonic2.png"),loadImage("Sonic1.png"),loadImage("Sonic5.png")]
-    photo = loadImage("bgrnd1.png")
-    photo1 = loadImage("bgrnd2.png")
-    photo2 = loadImage("bgrnd3.png")
+    global photo
+    photo = loadImage("Road.png")
 
     
     randomPoints = RandomXYPoints(25)
@@ -35,11 +34,12 @@ def setup():
 def draw():
     global speed_x,speed_y, letter,speed,background_v,level1,level2, strx, stry, randomPoints
     global imageList, imageIndex, level3, winner
-    
+    global photo
 #______________________________________________________________ Under Here is the Game Over Screen
     if background_v :
-        background(255)
-        fill(0,255,230)
+    
+        image(photo,0,0)
+
         if mouseX <= 449:
             image(imageList[3],mouseX-15,speed_y-20,35,50)
         if mouseX >= 450 and mouseX <=550 :
